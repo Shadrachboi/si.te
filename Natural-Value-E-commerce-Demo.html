@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Value - Organic & Sustainable Products</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#2E7D32',secondary:'#81C784'},borderRadius:{'none':'0px','sm':'8px',DEFAULT:'12px','md':'16px','lg':'20px','xl':'24px','2xl':'28px','3xl':'32px','full':'9999px','button':'12px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        .custom-checkbox {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+        .custom-checkbox input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #2a2a2a;
+            border: 2px solid #4b5563;
+            border-radius: 4px;
+        }
+        .custom-checkbox input:checked ~ .checkmark {
+            background-color: #2E7D32;
+            border-color: #2E7D32;
+        }
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        .custom-checkbox input:checked ~ .checkmark:after {
+            display: block;
+        }
+        .custom-checkbox .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 24px;
+        }
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #2a2a2a;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #2E7D32;
+        }
+        input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+        .hero-section {
+            background-image: url('https://public.readdy.ai/ai/img_res/48abf23fe9da3cc30bde04aec119e3ae.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <!-- Top Bar -->
+            <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                <div class="text-sm">
+                    <span class="mr-4">Free shipping on orders over $50</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-facebook-fill"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-instagram-line"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-twitter-x-line"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Main Navigation -->
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="font-['Pacifico'] text-2xl text-primary">Natural Value</a>
+                
+                <nav class="hidden lg:flex items-center space-x-6">
+                    <a href="#" class="font-medium hover:text-primary transition-colors">Home</a>
+                    <a href="#" class="font-medium hover:text-primary transition-colors">Organic Food</a>
+                    <a href="#" class="font-medium hover:text-primary transition-colors">Non-Organic Food</a>
+                    <a href="#" class="font-medium hover:text-primary transition-colors">Paper Products</a>
+                    <a href="#" class="font-medium hover:text-primary transition-colors">Plastic Products</a>
+                    <a href="#" class="font-medium hover:text-primary transition-colors">Kitchen</a>
+                    <a href="#" class="font-medium hover:text-primary transition-colors">Pet Food</a>
+                    <a href="#" class="font-medium hover:text-primary transition-colors">Contact</a>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search products..." class="py-2 pl-10 pr-4 w-64 rounded bg-gray-100 border-none focus:ring-2 focus:ring-primary text-sm">
+                        <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <i class="ri-user-line ri-lg"></i>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="relative text-gray-700 hover:text-primary transition-colors">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <i class="ri-shopping-cart-line ri-lg"></i>
+                        </div>
+                        <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                    </a>
+                    
+                    <button class="lg:hidden text-gray-700">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <i class="ri-menu-line ri-lg"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="pt-28">
+        <!-- Hero Section -->
+        <section class="hero-section relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+            <div class="container mx-auto px-4 py-24 relative z-10">
+                <div class="max-w-xl">
+                    <h1 class="text-5xl font-bold text-white mb-6">Sweet Deals Everyday</h1>
+                    <p class="text-xl text-white/90 mb-8">Discover our premium selection of organic and sustainable products for a healthier lifestyle.</p>
+                    <button class="bg-primary hover:bg-primary/90 text-white py-3 px-8 rounded-button font-medium shadow-lg transition-all whitespace-nowrap">Shop Now</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Featured Products -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">Bestsellers</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Product 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/b04ea8e6885fd2d491a4e5a9d301d7a6.jpg" alt="Organic Maple Syrup" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-semibold">Organic Maple Syrup</h3>
+                                <span class="bg-green-100 text-primary text-xs px-2 py-1 rounded-full">Organic</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Pure Grade A maple syrup, sustainably harvested from Vermont forests.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold">$12.99</span>
+                                <button class="bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/e0e2be05b1afd8d8c27da10af36c6bcb.jpg" alt="Wild Caught Tuna" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-semibold">Wild Caught Tuna</h3>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">Sustainable</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Dolphin-safe, sustainably caught tuna packed in pure water.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold">$3.49</span>
+                                <button class="bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/235b2a262d501f0636b529dbcc2e5cae.jpg" alt="Organic Beans" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-semibold">Organic Beans</h3>
+                                <span class="bg-green-100 text-primary text-xs px-2 py-1 rounded-full">Organic</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">BPA-free canned organic beans, perfect for quick and healthy meals.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold">$2.29</span>
+                                <button class="bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Product Categories -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">Shop by Category</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Category 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/75fb2a13a0deb434e4d61a5a84ef1256.jpg" alt="Organic Food" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4">Organic Food</h3>
+                            <p class="text-gray-600 mb-4">Certified organic fruits, vegetables, grains, and more.</p>
+                            <a href="#" class="text-primary font-medium flex items-center">
+                                Shop Collection
+                                <div class="w-5 h-5 flex items-center justify-center ml-1">
+                                    <i class="ri-arrow-right-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/e0d3eb2e1aaf4ccd576a245d8425e545.jpg" alt="Non-Organic Food" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4">Non-Organic Food</h3>
+                            <p class="text-gray-600 mb-4">Quality conventional foods at affordable prices.</p>
+                            <a href="#" class="text-primary font-medium flex items-center">
+                                Shop Collection
+                                <div class="w-5 h-5 flex items-center justify-center ml-1">
+                                    <i class="ri-arrow-right-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/23ae5f529bc53030e0f6aa0cdeb7b78d.jpg" alt="Paper Products" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4">Paper Products</h3>
+                            <p class="text-gray-600 mb-4">Sustainable paper towels, toilet paper, and napkins.</p>
+                            <a href="#" class="text-primary font-medium flex items-center">
+                                Shop Collection
+                                <div class="w-5 h-5 flex items-center justify-center ml-1">
+                                    <i class="ri-arrow-right-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/da408676dad1cb180e5bad375b1f5476.jpg" alt="Plastic Products" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4">Plastic Products</h3>
+                            <p class="text-gray-600 mb-4">BPA-free containers, wraps, and sustainable alternatives.</p>
+                            <a href="#" class="text-primary font-medium flex items-center">
+                                Shop Collection
+                                <div class="w-5 h-5 flex items-center justify-center ml-1">
+                                    <i class="ri-arrow-right-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 5 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/f239dec32921ab3a33540db472c760fe.jpg" alt="Kitchen" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4">Kitchen</h3>
+                            <p class="text-gray-600 mb-4">Eco-friendly utensils, cookware, and kitchen essentials.</p>
+                            <a href="#" class="text-primary font-medium flex items-center">
+                                Shop Collection
+                                <div class="w-5 h-5 flex items-center justify-center ml-1">
+                                    <i class="ri-arrow-right-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 6 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/919842e8e80cc859ce4db24ce6c3a44c.jpg" alt="Pet Food" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4">Pet Food</h3>
+                            <p class="text-gray-600 mb-4">Natural and organic options for your furry friends.</p>
+                            <a href="#" class="text-primary font-medium flex items-center">
+                                Shop Collection
+                                <div class="w-5 h-5 flex items-center justify-center ml-1">
+                                    <i class="ri-arrow-right-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 7 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/55fd2544a8029b8a3aa70a21aad5f91f.jpg" alt="Food Service" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4">Food Service</h3>
+                            <p class="text-gray-600 mb-4">Bulk options for restaurants and food service providers.</p>
+                            <a href="#" class="text-primary font-medium flex items-center">
+                                Shop Collection
+                                <div class="w-5 h-5 flex items-center justify-center ml-1">
+                                    <i class="ri-arrow-right-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 8 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/e4ca03abe125d6430610c269cece2ad8.jpg" alt="Merchandise" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4">Merchandise</h3>
+                            <p class="text-gray-600 mb-4">Branded reusable bags, water bottles, and more.</p>
+                            <a href="#" class="text-primary font-medium flex items-center">
+                                Shop Collection
+                                <div class="w-5 h-5 flex items-center justify-center ml-1">
+                                    <i class="ri-arrow-right-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Featured Products Carousel -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-4 text-center">Featured Products</h2>
+                <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">Discover our most popular items and current promotions, carefully selected for quality and value.</p>
+                
+                <div class="relative">
+                    <div class="overflow-x-auto scrollbar-hide pb-8">
+                        <div class="flex space-x-6" style="min-width: max-content;">
+                            <!-- Product 1 -->
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden w-72 transition-transform hover:shadow-lg">
+                                <div class="h-64 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/a81c66b3c500025e4542a7f84e22741a.jpg" alt="Organic Coconut Milk" class="w-full h-full object-cover object-top">
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="text-xl font-semibold">Organic Coconut Milk</h3>
+                                        <span class="bg-green-100 text-primary text-xs px-2 py-1 rounded-full">Organic</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-4">Rich and creamy coconut milk from organic coconuts.</p>
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <span class="text-xl font-bold">$3.99</span>
+                                            <span class="text-gray-500 line-through ml-2">$4.99</span>
+                                        </div>
+                                        <button class="bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Product 2 -->
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden w-72 transition-transform hover:shadow-lg">
+                                <div class="h-64 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/442cd1a71295128b72e91dfcce5e09e0.jpg" alt="Recycled Toilet Paper" class="w-full h-full object-cover object-top">
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="text-xl font-semibold">Recycled Toilet Paper</h3>
+                                        <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">Eco-Friendly</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-4">Soft, 100% recycled paper in plastic-free packaging.</p>
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <span class="text-xl font-bold">$8.99</span>
+                                            <span class="text-gray-500 line-through ml-2">$10.99</span>
+                                        </div>
+                                        <button class="bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Product 3 -->
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden w-72 transition-transform hover:shadow-lg">
+                                <div class="h-64 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/2dba494788a5eb40b9898b1d6c5d8397.jpg" alt="BPA-Free Containers" class="w-full h-full object-cover object-top">
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="text-xl font-semibold">BPA-Free Containers</h3>
+                                        <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">BPA-Free</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-4">Safe food storage containers in various sizes.</p>
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <span class="text-xl font-bold">$15.99</span>
+                                            <span class="text-gray-500 line-through ml-2">$19.99</span>
+                                        </div>
+                                        <button class="bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Product 4 -->
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden w-72 transition-transform hover:shadow-lg">
+                                <div class="h-64 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/fad226b278cb9085ac7365940654af7b.jpg" alt="Organic Quinoa" class="w-full h-full object-cover object-top">
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="text-xl font-semibold">Organic Quinoa</h3>
+                                        <span class="bg-green-100 text-primary text-xs px-2 py-1 rounded-full">Organic</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-4">Premium organic quinoa, high in protein and nutrients.</p>
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <span class="text-xl font-bold">$6.49</span>
+                                            <span class="text-gray-500 line-through ml-2">$7.99</span>
+                                        </div>
+                                        <button class="bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Product 5 -->
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden w-72 transition-transform hover:shadow-lg">
+                                <div class="h-64 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/8c40eb0e8029128f91fb3505e973b116.jpg" alt="Bamboo Utensil Set" class="w-full h-full object-cover object-top">
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="text-xl font-semibold">Bamboo Utensil Set</h3>
+                                        <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">Sustainable</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-4">Durable bamboo cooking utensils, naturally antimicrobial.</p>
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <span class="text-xl font-bold">$14.99</span>
+                                            <span class="text-gray-500 line-through ml-2">$18.99</span>
+                                        </div>
+                                        <button class="bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white rounded-full shadow-lg p-2 z-10 hidden md:block">
+                        <div class="w-8 h-8 flex items-center justify-center text-gray-700">
+                            <i class="ri-arrow-left-s-line ri-lg"></i>
+                        </div>
+                    </button>
+                    <button class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white rounded-full shadow-lg p-2 z-10 hidden md:block">
+                        <div class="w-8 h-8 flex items-center justify-center text-gray-700">
+                            <i class="ri-arrow-right-s-line ri-lg"></i>
+                        </div>
+                    </button>
+                    
+                    <!-- Dots -->
+                    <div class="flex justify-center space-x-2 mt-6">
+                        <button class="w-3 h-3 rounded-full bg-primary"></button>
+                        <button class="w-3 h-3 rounded-full bg-gray-300"></button>
+                        <button class="w-3 h-3 rounded-full bg-gray-300"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sustainability Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-12">
+                        <h2 class="text-3xl font-bold mb-6">Our Commitment to Sustainability</h2>
+                        <p class="text-gray-600 mb-8">At Natural Value, we believe in providing products that are good for you and good for the planet. Our commitment to sustainability guides everything we do.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full text-primary mr-4">
+                                    <i class="ri-recycle-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-2">Eco-Friendly Packaging</h3>
+                                    <p class="text-gray-600">We prioritize recyclable and compostable packaging materials.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full text-primary mr-4">
+                                    <i class="ri-leaf-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-2">Organic Farming</h3>
+                                    <p class="text-gray-600">Supporting organic farmers who use sustainable practices.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full text-primary mr-4">
+                                    <i class="ri-water-flash-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-2">Water Conservation</h3>
+                                    <p class="text-gray-600">Working with suppliers who prioritize water conservation.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full text-primary mr-4">
+                                    <i class="ri-shield-check-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-2">BPA-Free Products</h3>
+                                    <p class="text-gray-600">All our plastic products are free from harmful BPA.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <img src="https://public.readdy.ai/ai/img_res/79709affa2a5e1f86af29479b955faf0.jpg" alt="Sustainability" class="rounded-lg shadow-lg w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Customer Reviews -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-4 text-center">What Our Customers Say</h2>
+                <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">Hear from our satisfied customers about their experience with Natural Value products.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                        <div class="flex text-yellow-400 mb-3">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                        <p class="text-gray-600 mb-4">"I've been using Natural Value's organic products for years. The quality is consistently excellent, and I love supporting a company that cares about sustainability."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                                <i class="ri-user-line text-gray-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Emily Richardson</h4>
+                                <p class="text-sm text-gray-500">Verified Customer</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                        <div class="flex text-yellow-400 mb-3">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                        <p class="text-gray-600 mb-4">"The BPA-free containers are fantastic! They're durable, seal perfectly, and I feel good knowing they're safe for my family. Will definitely buy more."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                                <i class="ri-user-line text-gray-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Michael Thompson</h4>
+                                <p class="text-sm text-gray-500">Verified Customer</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 3 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                        <div class="flex text-yellow-400 mb-3">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="text-gray-600 mb-4">"I switched to Natural Value's recycled paper products and couldn't be happier. They're surprisingly soft, and I love that they come in plastic-free packaging."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                                <i class="ri-user-line text-gray-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Samantha Wilson</h4>
+                                <p class="text-sm text-gray-500">Verified Customer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-10">
+                    <a href="#" class="text-primary font-medium hover:underline">Read More Reviews</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter -->
+        <section class="py-16 bg-gray-800 text-white" style="background-image: url('https://public.readdy.ai/ai/img_res/3ae432e7de82cb49e759abbf8de3d261.jpg'); background-size: cover; background-position: center;">
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-4">Join Our Community</h2>
+                    <p class="mb-8">Subscribe to our newsletter for exclusive deals, new product announcements, and sustainable living tips.</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Your email address" class="flex-grow py-3 px-4 rounded-button bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <button class="bg-primary hover:bg-primary/90 text-white py-3 px-6 rounded-button font-medium transition-colors whitespace-nowrap">Subscribe</button>
+                    </div>
+                    
+                    <p class="text-sm mt-4 text-white/70">By subscribing, you agree to our Privacy Policy and consent to receive updates from Natural Value.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="font-['Pacifico'] text-2xl mb-6">Natural Value</h3>
+                    <p class="text-gray-400 mb-6">Providing sustainable and organic products for a healthier lifestyle and a healthier planet since 1995.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <div class="w-10 h-10 flex items-center justify-center">
+                                <i class="ri-facebook-fill"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <div class="w-10 h-10 flex items-center justify-center">
+                                <i class="ri-instagram-line"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <div class="w-10 h-10 flex items-center justify-center">
+                                <i class="ri-twitter-x-line"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <div class="w-10 h-10 flex items-center justify-center">
+                                <i class="ri-pinterest-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Our Stores</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sustainability Commitment</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Press</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Customer Service -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Customer Service</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Track Order</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Information</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1 mr-3">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-400">123 Organic Way, Sacramento, CA 95814, USA</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1 mr-3">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-400">(916) 836-3561</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1 mr-3">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-400">info@naturalvalue.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1 mr-3">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <span class="text-gray-400">Mon-Fri: 9AM-6PM<br>Sat: 10AM-4PM<br>Sun: Closed</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Payment Methods -->
+            <div class="border-t border-gray-800 pt-8 pb-4">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="w-10 h-6 flex items-center justify-center text-gray-400">
+                        <i class="ri-visa-fill ri-lg"></i>
+                    </div>
+                    <div class="w-10 h-6 flex items-center justify-center text-gray-400">
+                        <i class="ri-mastercard-fill ri-lg"></i>
+                    </div>
+                    <div class="w-10 h-6 flex items-center justify-center text-gray-400">
+                        <i class="ri-paypal-fill ri-lg"></i>
+                    </div>
+                    <div class="w-10 h-6 flex items-center justify-center text-gray-400">
+                        <i class="ri-amazon-pay-fill ri-lg"></i>
+                    </div>
+                    <div class="w-10 h-6 flex items-center justify-center text-gray-400">
+                        <i class="ri-apple-fill ri-lg"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="text-center text-gray-500 text-sm mt-8">
+                <p>&copy; 2025 Natural Value. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple scroll functionality for product carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.scrollbar-hide');
+            const leftArrow = document.querySelector('.ri-arrow-left-s-line').parentNode.parentNode;
+            const rightArrow = document.querySelector('.ri-arrow-right-s-line').parentNode.parentNode;
+            
+            if (carousel && leftArrow && rightArrow) {
+                leftArrow.addEventListener('click', function() {
+                    carousel.scrollBy({ left: -300, behavior: 'smooth' });
+                });
+                
+                rightArrow.addEventListener('click', function() {
+                    carousel.scrollBy({ left: 300, behavior: 'smooth' });
+                });
+            }
+            
+            // Fixed header behavior
+            const header = document.querySelector('header');
+            let lastScrollTop = 0;
+            
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 200) {
+                    // Scrolling down
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                header.style.transition = 'transform 0.3s ease-in-out';
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
+</body>
+</html>
